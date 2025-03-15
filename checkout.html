@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entity City checkout</title>
+</head>
+<body style="margin: 0; font-family: Arial, sans-serif; padding-top: 250px;">
+
+     <!-- Header -->
+    <header style="position: fixed; top: 0; left: 0; right: 0; z-index: 1000; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; background: linear-gradient(to right, #02298c, #00ccff); padding: 10px; color: white; width: 100%; box-sizing: border-box;">
+        <div class="left-section" style="flex: 1; display: flex; justify-content: flex-start;">
+            <img src="entity logo.png" alt="Company Logo" style="width: auto; height: auto; max-width: 100px;">
+        </div>
+    
+        <nav class="center-section" style="flex: 3; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
+            <nav class="center-section" style="flex: 3; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
+                <a href="index.html" 
+                   style="color: white; text-decoration: none; padding: 6px 12px; border-radius: 5px; font-weight: bold; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); transition: all 0.3s ease; text-align: center; font-size: 12px;"
+                   onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                   onmouseout="this.style.backgroundColor='transparent'; this.style.color='white';"
+                   onmousedown="this.style.backgroundColor='white'; this.style.color='black';"
+                   onmouseup="this.style.backgroundColor='transparent'; this.style.color='white';">
+                   Home
+                </a>
+                
+                <a href="products.html" 
+                   style="color: white; text-decoration: none; padding: 6px 12px; border-radius: 5px; font-weight: bold; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); transition: all 0.3s ease; text-align: center; font-size: 12px;"
+                   onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                   onmouseout="this.style.backgroundColor='transparent'; this.style.color='white';"
+                   onmousedown="this.style.backgroundColor='white'; this.style.color='black';"
+                   onmouseup="this.style.backgroundColor='transparent'; this.style.color='white';">
+                   Shop
+                </a>
+                
+                <a href="cart.html" 
+                   style="color: white; text-decoration: none; padding: 6px 12px; border-radius: 5px; font-weight: bold; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); transition: all 0.3s ease; text-align: center; font-size: 12px;"
+                   onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                   onmouseout="this.style.backgroundColor='transparent'; this.style.color='white';"
+                   onmousedown="this.style.backgroundColor='white'; this.style.color='black';"
+                   onmouseup="this.style.backgroundColor='transparent'; this.style.color='white';">
+                   Cart
+                </a>
+                
+                <a href="checkout.html" 
+                   style="color: white; text-decoration: none; padding: 6px 12px; border-radius: 5px; font-weight: bold; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); transition: all 0.3s ease; text-align: center; font-size: 12px;"
+                   onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                   onmouseout="this.style.backgroundColor='transparent'; this.style.color='white';"
+                   onmousedown="this.style.backgroundColor='white'; this.style.color='black';"
+                   onmouseup="this.style.backgroundColor='transparent'; this.style.color='white';">
+                   Checkout
+                </a>
+                
+                <a href="contact.html" 
+                   style="color: white; text-decoration: none; padding: 6px 12px; border-radius: 5px; font-weight: bold; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); transition: all 0.3s ease; text-align: center; font-size: 12px;"
+                   onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                   onmouseout="this.style.backgroundColor='transparent'; this.style.color='white';"
+                   onmousedown="this.style.backgroundColor='white'; this.style.color='black';"
+                   onmouseup="this.style.backgroundColor='transparent'; this.style.color='white';">
+                   Contact
+                </a>
+             </nav>
+             
+         
+    
+        <div class="right-section" style="flex: 1; display: flex; justify-content: flex-end;">
+            <div id="menu-icon" onclick="toggleDropdown()" 
+            style="cursor: pointer; color: white; padding: 6px 12px; border-radius: 5px; font-size: 12px; 
+                   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); transition: all 0.3s ease;"
+            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+            onmouseout="this.style.backgroundColor='transparent'; this.style.color='white';"
+            onmousedown="this.style.backgroundColor='white'; this.style.color='black';"
+            onmouseup="this.style.backgroundColor='transparent'; this.style.color='white';">
+            ☰ Menu
+       </div>
+       
+        </div>
+        
+    </header>
+    
+    <!-- Dropdown Menu -->
+    <div id="dropdown-menu" style="display: none; position: fixed; top: 113px; right: 10px; background: linear-gradient(to right, #02298c, #00ccff); border-radius: 10px; padding: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); z-index: 9000;">
+        <a href="Account.html" 
+   style="color: white; text-decoration: none; padding: 4px 8px; display: block; border-radius: 5px; font-size: 12px; background-color: black; border: 2px solid white; font-weight: bold; margin: 5px; transition: all 0.3s ease;"
+   onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+   onmouseout="this.style.backgroundColor='black'; this.style.color='white';"
+   onmousedown="this.style.backgroundColor='white'; this.style.color='black';"
+   onmouseup="this.style.backgroundColor='black'; this.style.color='white';">
+   Create Account
+</a>
+
+<a href="about.html" 
+   style="color: white; text-decoration: none; padding: 4px 8px; display: block; border-radius: 5px; font-size: 12px; background-color: black; border: 2px solid white; font-weight: bold; margin: 5px; transition: all 0.3s ease;"
+   onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+   onmouseout="this.style.backgroundColor='black'; this.style.color='white';"
+   onmousedown="this.style.backgroundColor='white'; this.style.color='black';"
+   onmouseup="this.style.backgroundColor='black'; this.style.color='white';">
+   About Us
+</a>
+
+<a href="new_stock.html" 
+   style="color: white; text-decoration: none; padding: 4px 8px; display: block; border-radius: 5px; font-size: 12px; background-color: black; border: 2px solid white; font-weight: bold; margin: 5px; transition: all 0.3s ease;"
+   onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+   onmouseout="this.style.backgroundColor='black'; this.style.color='white';"
+   onmousedown="this.style.backgroundColor='white'; this.style.color='black';"
+   onmouseup="this.style.backgroundColor='black'; this.style.color='white';">
+   New Stock
+</a>
+
+<a href="privacy.html" 
+   style="color: white; text-decoration: none; padding: 4px 8px; display: block; border-radius: 5px; font-size: 12px; background-color: black; border: 2px solid white; font-weight: bold; margin: 5px; transition: all 0.3s ease;"
+   onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+   onmouseout="this.style.backgroundColor='black'; this.style.color='white';"
+   onmousedown="this.style.backgroundColor='white'; this.style.color='black';"
+   onmouseup="this.style.backgroundColor='black'; this.style.color='white';">
+   Privacy Policy
+</a>
+
+<a href="terms.html" 
+   style="color: white; text-decoration: none; padding: 4px 8px; display: block; border-radius: 5px; font-size: 12px; background-color: black; border: 2px solid white; font-weight: bold; margin: 5px; transition: all 0.3s ease;"
+   onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+   onmouseout="this.style.backgroundColor='black'; this.style.color='white';"
+   onmousedown="this.style.backgroundColor='white'; this.style.color='black';"
+   onmouseup="this.style.backgroundColor='black'; this.style.color='white';">
+   Terms Policy
+</a>
+
+<a href="payments.html" 
+   style="color: white; text-decoration: none; padding: 4px 8px; display: block; border-radius: 5px; font-size: 12px; background-color: black; border: 2px solid white; font-weight: bold; margin: 5px; transition: all 0.3s ease;"
+   onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+   onmouseout="this.style.backgroundColor='black'; this.style.color='white';"
+   onmousedown="this.style.backgroundColor='white'; this.style.color='black';"
+   onmouseup="this.style.backgroundColor='black'; this.style.color='white';">
+   Payments Policy
+</a>
+
+        
+    </div>
+    
+    <script>
+        function toggleDropdown() {
+            const dropdown = document.getElementById('dropdown-menu');
+            const isVisible = dropdown.style.display === 'block';
+            dropdown.style.display = isVisible ? 'none' : 'block';
+        }
+    
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const dropdown = document.getElementById('dropdown-menu');
+            const menuIcon = document.getElementById('menu-icon');
+            if (event.target !== dropdown && !dropdown.contains(event.target) && event.target !== menuIcon) {
+                dropdown.style.display = 'none';
+            }
+        });
+    </script>
+    
+    
+
+    
+    
+
+      <!-- main content -->
+<main style="margin: 0 auto; padding: 40px 20px; max-width: 1100px; background-color: #fff; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); text-align: center;">
+    <div style="max-width: 600px; margin: 50px auto; padding: 20px; background-color: #222; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); color: #fff;">
+        <h1 style="text-align: center; color: #ff6600;">Checkout</h1>
+
+        <div id="checkout-item" style="display: flex; flex-direction: column; align-items: center; background: #333; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);">
+            <!-- Product image and details will be dynamically added here -->
+        </div>
+
+        <div id="total-amount" style="text-align: center; margin-top: 20px; font-size: 18px; font-weight: bold; color: #ff6600;">
+            Total: UGX 0
+        </div>
+
+        <!-- Passing item data to payment page using URL parameters -->
+        <a id="proceed-to-payment" href="" style="background-color: #ff6600; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; text-align: center; display: block; margin-top: 20px;">
+            Proceed to Payment
+        </a>
+
+        <button onclick="displayTotal()" style="background-color: #003366; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; display: block; margin-top: 10px; cursor: pointer;">
+            Display Total Amount
+        </button>
+    </div>
+
+    <script>
+        // Function to load item details from URL
+        function loadCheckoutItem() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const name = urlParams.get('item');
+            const price = urlParams.get('price');
+            const image = urlParams.get('image');
+
+            const checkoutItemDiv = document.getElementById('checkout-item');
+            const totalAmountDiv = document.getElementById('total-amount');
+
+            // Display product details with zoomable image
+            checkoutItemDiv.innerHTML = `
+                <img id="checkout-image" src="${image}" alt="${name}" style="width: 400px; height: 400px; object-fit: cover; margin-bottom: 20px; border-radius: 10px; transition: transform 0.25s ease;">
+                <p style="font-size: 20px; color: #ff6600; font-weight: bold;">${name}</p>
+                <p style="color: #fff;">Price: UGX ${price}</p>
+            `;
+
+            totalAmountDiv.textContent = `Total: UGX ${price}`;
+
+            // Add double-click event for zooming in and out
+            const imageElement = document.getElementById('checkout-image');
+            imageElement.addEventListener('dblclick', function() {
+                if (imageElement.style.transform === "scale(2)") {
+                    imageElement.style.transform = "scale(1)";
+                } else {
+                    imageElement.style.transform = "scale(2)";
+                }
+            });
+
+            // Link the product data to the payment page
+            const proceedToPaymentLink = document.getElementById('proceed-to-payment');
+            proceedToPaymentLink.href = `payment.html?item=${name}&price=${price}&image=${image}`;
+        }
+
+        // Function to display the total amount on checkout
+        function displayTotal() {
+            alert("Total amount is displayed above.");
+        }
+
+        // Load checkout item when the page loads
+        document.addEventListener('DOMContentLoaded', loadCheckoutItem);
+    </script>
+</main>
+
+
+
+
+   
+       <!-- footer -->
+       <footer style="background: linear-gradient(to bottom, #1E3A8A, #0284C7, #03A9F4, #1E3A8A); color: #ffffff; padding: 30px 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); width: 100%; box-sizing: border-box;">
+        <!-- Left Section: Company Info with Icons -->
+        <div style="flex: 1; min-width: 250px; padding: 10px; box-sizing: border-box;">
+            <p style="margin: 8px 0; font-size: 1rem; display: flex; align-items: center;">
+                <i class="fas fa-store" style="margin-right: 8px; color: #000000;"></i> 
+                Entity City on Fire Fashion Store
+            </p>
+            <p style="margin: 8px 0; font-size: 1rem; display: flex; align-items: center;">
+                <i class="fas fa-map-marker-alt" style="margin-right: 8px; color: #000000;"></i> 
+                Kampala, Uganda
+            </p>
+            <p style="margin: 8px 0; font-size: 1rem; display: flex; align-items: center;">
+                <i class="fas fa-phone-alt" style="margin-right: 8px; color: #000000;"></i> 
+                +256 744 843511
+            </p>
+        </div>
+    
+       <!-- Center Section: Copyright, Terms, and Privacy -->
+       <div style="flex: 1; min-width: 180px; text-align: center; box-sizing: border-box;">
+        <p style="margin: 3px 0; font-size: 1.2rem;">&copy; 2025 Entity City on Fire Fashion Store</p>
+        <p style="margin: 3px 0; font-size: 1rem;">All Rights Reserved</p>
+        <p style="margin: 3px 0; font-size: 1rem;">
+            <a href="terms.html" style="color: #000000; text-decoration: none;">Terms</a> | 
+            <a href="privacy.html" style="color: #000000; text-decoration: none;">Privacy</a>
+        </p>
+    </div>
+    
+        <!-- Right Section: Social Media Links with Header and Newsletter Signup -->
+        <div style="flex: 1; min-width: 200px; text-align: center; box-sizing: border-box;">
+            <p style="margin: 5px 0; font-size: 1.1rem; font-weight: bold;">Follow Our Social Media</p>
+            <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                <a href="https://facebook.com/yourpage" style="color: #000000; font-size: 1.8rem; margin: 5px;">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://instagram.com/yourpage" style="color: #000000; font-size: 1.8rem; margin: 5px;">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://twitter.com/yourpage" style="color: #000000; font-size: 1.8rem; margin: 5px;">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://linkedin.com/company/yourpage" style="color: #000000; font-size: 1.8rem; margin: 5px;">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://youtube.com/yourpage" style="color: #000000; font-size: 1.8rem; margin: 5px;">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://wa.me/+256744843511" style="color: #000000; font-size: 1.8rem; margin: 5px;">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    
+</body>
+</html>

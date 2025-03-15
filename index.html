@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entity City on Fire</title>
+</head>
+<body style="margin: 0; font-family: Arial, sans-serif;">
+
+    <!-- Header -->
+    <header style="position: fixed; top: 0; left: 0; right: 0; z-index: 1000; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; background: linear-gradient(to right, #02298c, #00ccff); padding: 10px; color: white; width: 100%; box-sizing: border-box;">
+        <div class="left-section" style="flex: 1; display: flex; justify-content: flex-start;">
+            <img src="entity logo.png" alt="Company Logo" style="width: auto; height: auto; max-width: 100px;">
+        </div>
+    
+        <nav class="center-section" style="flex: 3; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
+            <nav class="center-section" style="flex: 3; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
+                <a href="index.html" 
+                   style="color: white; text-decoration: none; padding: 6px 12px; border-radius: 5px; font-weight: bold; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); transition: all 0.3s ease; text-align: center; font-size: 12px;"
+                   onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                   onmouseout="this.style.backgroundColor='transparent'; this.style.color='white';"
+                   onmousedown="this.style.backgroundColor='white'; this.style.color='black';"
+                   onmouseup="this.style.backgroundColor='transparent'; this.style.color='white';">
+                   Home
+                </a>
+                
+                <a href="products.html" 
+                   style="color: white; text-decoration: none; padding: 6px 12px; border-radius: 5px; font-weight: bold; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); transition: all 0.3s ease; text-align: center; font-size: 12px;"
+                   onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                   onmouseout="this.style.backgroundColor='transparent'; this.style.color='white';"
+                   onmousedown="this.style.backgroundColor='white'; this.style.color='black';"
+                   onmouseup="this.style.backgroundColor='transparent'; this.style.color='white';">
+                   Shop
+                </a>
+                
+                <a href="cart.html" 
+                   style="color: white; text-decoration: none; padding: 6px 12px; border-radius: 5px; font-weight: bold; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); transition: all 0.3s ease; text-align: center; font-size: 12px;"
+                   onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                   onmouseout="this.style.backgroundColor='transparent'; this.style.color='white';"
+                   onmousedown="this.style.backgroundColor='white'; this.style.color='black';"
+                   onmouseup="this.style.backgroundColor='transparent'; this.style.color='white';">
+                   Cart
+                </a>
+                
+                <a href="checkout.html" 
+                   style="color: white; text-decoration: none; padding: 6px 12px; border-radius: 5px; font-weight: bold; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); transition: all 0.3s ease; text-align: center; font-size: 12px;"
+                   onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                   onmouseout="this.style.backgroundColor='transparent'; this.style.color='white';"
+                   onmousedown="this.style.backgroundColor='white'; this.style.color='black';"
+                   onmouseup="this.style.backgroundColor='transparent'; this.style.color='white';">
+                   Checkout
+                </a>
+                
+                <a href="contact.html" 
+                   style="color: white; text-decoration: none; padding: 6px 12px; border-radius: 5px; font-weight: bold; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); transition: all 0.3s ease; text-align: center; font-size: 12px;"
+                   onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+                   onmouseout="this.style.backgroundColor='transparent'; this.style.color='white';"
+                   onmousedown="this.style.backgroundColor='white'; this.style.color='black';"
+                   onmouseup="this.style.backgroundColor='transparent'; this.style.color='white';">
+                   Contact
+                </a>
+             </nav>
+             
+         
+    
+        <div class="right-section" style="flex: 1; display: flex; justify-content: flex-end;">
+            <div id="menu-icon" onclick="toggleDropdown()" 
+            style="cursor: pointer; color: white; padding: 6px 12px; border-radius: 5px; font-size: 12px; 
+                   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); transition: all 0.3s ease;"
+            onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+            onmouseout="this.style.backgroundColor='transparent'; this.style.color='white';"
+            onmousedown="this.style.backgroundColor='white'; this.style.color='black';"
+            onmouseup="this.style.backgroundColor='transparent'; this.style.color='white';">
+            ☰ Menu
+       </div>
+       
+        </div>
+        
+    </header>
+    
+    <!-- Dropdown Menu -->
+    <div id="dropdown-menu" style="display: none; position: fixed; top: 113px; right: 10px; background: linear-gradient(to right, #02298c, #00ccff); border-radius: 10px; padding: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); z-index: 9000;">
+        <a href="Account.html" 
+   style="color: white; text-decoration: none; padding: 4px 8px; display: block; border-radius: 5px; font-size: 12px; background-color: black; border: 2px solid white; font-weight: bold; margin: 5px; transition: all 0.3s ease;"
+   onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+   onmouseout="this.style.backgroundColor='black'; this.style.color='white';"
+   onmousedown="this.style.backgroundColor='white'; this.style.color='black';"
+   onmouseup="this.style.backgroundColor='black'; this.style.color='white';">
+   Create Account
+</a>
+
+<a href="about.html" 
+   style="color: white; text-decoration: none; padding: 4px 8px; display: block; border-radius: 5px; font-size: 12px; background-color: black; border: 2px solid white; font-weight: bold; margin: 5px; transition: all 0.3s ease;"
+   onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+   onmouseout="this.style.backgroundColor='black'; this.style.color='white';"
+   onmousedown="this.style.backgroundColor='white'; this.style.color='black';"
+   onmouseup="this.style.backgroundColor='black'; this.style.color='white';">
+   About Us
+</a>
+
+<a href="new_stock.html" 
+   style="color: white; text-decoration: none; padding: 4px 8px; display: block; border-radius: 5px; font-size: 12px; background-color: black; border: 2px solid white; font-weight: bold; margin: 5px; transition: all 0.3s ease;"
+   onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+   onmouseout="this.style.backgroundColor='black'; this.style.color='white';"
+   onmousedown="this.style.backgroundColor='white'; this.style.color='black';"
+   onmouseup="this.style.backgroundColor='black'; this.style.color='white';">
+   New Stock
+</a>
+
+<a href="privacy.html" 
+   style="color: white; text-decoration: none; padding: 4px 8px; display: block; border-radius: 5px; font-size: 12px; background-color: black; border: 2px solid white; font-weight: bold; margin: 5px; transition: all 0.3s ease;"
+   onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+   onmouseout="this.style.backgroundColor='black'; this.style.color='white';"
+   onmousedown="this.style.backgroundColor='white'; this.style.color='black';"
+   onmouseup="this.style.backgroundColor='black'; this.style.color='white';">
+   Privacy Policy
+</a>
+
+<a href="terms.html" 
+   style="color: white; text-decoration: none; padding: 4px 8px; display: block; border-radius: 5px; font-size: 12px; background-color: black; border: 2px solid white; font-weight: bold; margin: 5px; transition: all 0.3s ease;"
+   onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+   onmouseout="this.style.backgroundColor='black'; this.style.color='white';"
+   onmousedown="this.style.backgroundColor='white'; this.style.color='black';"
+   onmouseup="this.style.backgroundColor='black'; this.style.color='white';">
+   Terms Policy
+</a>
+
+<a href="payments.html" 
+   style="color: white; text-decoration: none; padding: 4px 8px; display: block; border-radius: 5px; font-size: 12px; background-color: black; border: 2px solid white; font-weight: bold; margin: 5px; transition: all 0.3s ease;"
+   onmouseover="this.style.backgroundColor='white'; this.style.color='black';"
+   onmouseout="this.style.backgroundColor='black'; this.style.color='white';"
+   onmousedown="this.style.backgroundColor='white'; this.style.color='black';"
+   onmouseup="this.style.backgroundColor='black'; this.style.color='white';">
+   Payments Policy
+</a>
+
+        
+    </div>
+    
+    <script>
+        function toggleDropdown() {
+            const dropdown = document.getElementById('dropdown-menu');
+            const isVisible = dropdown.style.display === 'block';
+            dropdown.style.display = isVisible ? 'none' : 'block';
+        }
+    
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const dropdown = document.getElementById('dropdown-menu');
+            const menuIcon = document.getElementById('menu-icon');
+            if (event.target !== dropdown && !dropdown.contains(event.target) && event.target !== menuIcon) {
+                dropdown.style.display = 'none';
+            }
+        });
+    </script>
+    
+    
+
+    <!-- Hero Section -->
+<section style="position: relative; text-align: center; padding: 20px; background: url('woman-snake-print-turban-600nw-1956159304.webp') no-repeat center/cover; height: 70vh; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white;">
+    <!-- Overlay background -->
+    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.389); z-index: 1;"></div>
+
+    <!-- Text Content -->
+    <h1 style="font-size: 3rem; font-weight: bold; margin-bottom: 15px; z-index: 2; background-color: rgba(0, 0, 0, 0.6); padding: 15px 30px; border-radius: 10px; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); display: inline-block;">Entity City</h1>
+    <h2 style="font-size: 2rem; margin-bottom: 25px; z-index: 2; background-color: rgba(0, 0, 0, 0.6); padding: 10px 30px; border-radius: 10px; text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7); display: inline-block;">Shop Smart, Live Smart</h2>
+    <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto; line-height: 1.6; padding: 0 20px; z-index: 2;">Discover trendy, affordable, and sustainable fashion. Shop now and elevate your wardrobe with the best deals available!</p>
+</section>
+
+<!-- Responsive Design -->
+<style>
+    @media (max-width: 768px) {
+        section h1 { font-size: 2.5rem; }
+        section h2 { font-size: 1.6rem; }
+        section p { font-size: 1rem; }
+    }
+
+    @media (max-width: 480px) {
+        section h1 { font-size: 2rem; }
+        section h2 { font-size: 1.4rem; }
+        section p { font-size: 0.9rem; }
+    }
+</style>
+
+
+   <!-- Location Section -->
+<section style="text-align: center; padding: 20px; background-color: #f0f0f0; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+    <h2>Entity City on Fire - Kampala</h2>
+    <p>Discover the latest fashion trends in Kampala! Shop your favorite outfits and accessories today.</p>
+</section>
+
+<h1 style="text-align: center; color: darkblue; margin-top: 20px;">Product Store</h1>
+
+<div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 30px;">
+    <!-- Product 1: Elegant Kitenge Dress -->
+<div style="background-color: white; border: 1px solid #ddd; border-radius: 8px; padding: 20px; width: 220px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); text-align: center;">
+ <img src="KITENGE FASHION DRESS.jpg" alt="Kitenge Dress" style="width: 100%; height: 250px; object-fit: cover; border-radius: 15px;">
+ <h2 style="font-size: 18px; color: #003366; margin: 10px 0;">Elegant Kitenge Dress</h2>
+ <p style="color: #777; font-size: 14px;">UGX 150,000</p>
+ <button onclick="addToCart('Elegant Kitenge Dress', 150000, 'KITENGE FASHION DRESS.jpg')" style="background-color: #ff6600; color: white; padding: 10px 15px; border: none; border-radius: 4px; cursor: pointer;">
+     Add to Cart
+ </button>
+</div>
+
+
+     <!-- Product 2: Classic Men's Suit -->
+<div style="background-color: white; border: 1px solid #ddd; border-radius: 8px; padding: 20px; width: 220px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); text-align: center;">
+ <img src="men.jpg" alt="Men's Suit" style="width: 100%; height: 250px; object-fit: cover; border-radius: 15px;">
+ <h2 style="font-size: 18px; color: #003366; margin: 10px 0;">Classic Men's Suit</h2>
+ <p style="color: #777; font-size: 14px;">UGX 500,000</p>
+ <button onclick="addToCart('Classic Men\'s Suit', 500000, 'men.jpg')" style="background-color: #ff6600; color: white; padding: 10px 15px; border: none; border-radius: 4px; cursor: pointer;">
+     Add to Cart
+ </button>
+</div>
+
+<!-- Product 3: Stylish Handbag -->
+<div style="background-color: white; border: 1px solid #ddd; border-radius: 8px; padding: 20px; width: 220px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); text-align: center;">
+ <img src="hand bags.jpg" alt="Ladies' Handbag" style="width: 100%; height: 250px; object-fit: cover; border-radius: 15px;">
+ <h2 style="font-size: 18px; color: #003366; margin: 10px 0;">Stylish Handbag</h2>
+ <p style="color: #777; font-size: 14px;">UGX 200,000</p>
+ <button onclick="addToCart('Stylish Handbag', 200000, 'hand bags.jpg')" style="background-color: #ff6600; color: white; padding: 10px 15px; border: none; border-radius: 4px; cursor: pointer;">
+     Add to Cart
+ </button>
+</div>
+
+<!-- Product 4: African Sandals -->
+<div style="background-color: white; border: 1px solid #ddd; border-radius: 8px; padding: 20px; width: 220px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); text-align: center;">
+ <img src="Wavsuf-Flat-Sandals-for-Women-Beach-Casual-Summer-Black-Sandals-Shoes-Size-8-5_00791d43-5488-4c34-9064-3ca855d5fbe4.edb21935ddca58d37f3c83809dfd451c.avif" alt="African Sandals" style="width: 100%; height: 250px; object-fit: cover; border-radius: 15px;">
+ <h2 style="font-size: 18px; color: #003366; margin: 10px 0;">African Sandals</h2>
+ <p style="color: #777; font-size: 14px;">UGX 80,000</p>
+ <button onclick="addToCart('African Sandals', 80000, 'Wavsuf-Flat-Sandals-for-Women-Beach-Casual-Summer-Black-Sandals-Shoes-Size-8-5_00791d43-5488-4c34-9064-3ca855d5fbe4.edb21935ddca58d37f3c83809dfd451c.avif')" style="background-color: #ff6600; color: white; padding: 10px 15px; border: none; border-radius: 4px; cursor: pointer;">
+     Add to Cart
+ </button>
+</div>
+
+     <!-- Product 5: Casual Hoodie -->
+<div style="background-color: white; border: 1px solid #ddd; border-radius: 8px; padding: 20px; width: 220px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); text-align: center;">
+ <img src="hoodie.jpg" alt="Casual Hoodie" style="width: 100%; height: 250px; object-fit: cover; border-radius: 15px;">
+ <h2 style="font-size: 18px; color: #003366; margin: 10px 0;">Casual Hoodie</h2>
+ <p style="color: #777; font-size: 14px;">UGX 120,000</p>
+ <button onclick="addToCart('Casual Hoodie', 120000, 'hoodie.jpg')" style="background-color: #ff6600; color: white; padding: 10px 15px; border: none; border-radius: 4px; cursor: pointer;">
+     Add to Cart
+ </button>
+</div>
+
+
+<!-- Product 6: Genuine Leather Belt -->
+<div style="background-color: white; border: 1px solid #ddd; border-radius: 8px; padding: 20px; width: 220px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); text-align: center;">
+ <img src="leather-belt.jpg" alt="Genuine Leather Belt" style="width: 100%; height: 250px; object-fit: cover; border-radius: 15px;">
+ <h2 style="font-size: 18px; color: #003366; margin: 10px 0;">Genuine Leather Belt</h2>
+ <p style="color: #777; font-size: 14px;">UGX 50,000</p>
+ <button onclick="addToCart('Genuine Leather Belt', 50000, 'leather-belt.jpg')" style="background-color: #ff6600; color: white; padding: 10px 15px; border: none; border-radius: 4px; cursor: pointer;">
+     Add to Cart
+ </button>
+</div>
+
+<!-- Product 7: Trendy Sneakers -->
+<div style="background-color: white; border: 1px solid #ddd; border-radius: 8px; padding: 20px; width: 220px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); text-align: center;">
+ <img src="sneakers.jpg" alt="Trendy Sneakers" style="width: 100%; height: 250px; object-fit: cover; border-radius: 15px;">
+ <h2 style="font-size: 18px; color: #003366; margin: 10px 0;">Trendy Sneakers</h2>
+ <p style="color: #777; font-size: 14px;">UGX 300,000</p>
+ <button onclick="addToCart('Trendy Sneakers', 300000, 'sneakers.jpg')" style="background-color: #ff6600; color: white; padding: 10px 15px; border: none; border-radius: 4px; cursor: pointer;">
+     Add to Cart
+ </button>
+</div>
+
+     <!-- Product 8: African Necklace -->
+<div style="background-color: white; border: 1px solid #ddd; border-radius: 8px; padding: 20px; width: 220px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); text-align: center;">
+ <img src="African Necklace.avif" alt="African Necklace" style="width: 100%; height: 250px; object-fit: cover; border-radius: 15px;">
+ <h2 style="font-size: 18px; color: #003366; margin: 10px 0;">African Necklace</h2>
+ <p style="color: #777; font-size: 14px;">UGX 60,000</p>
+ <button onclick="addToCart('African Necklace', 60000, 'African Necklace.avif')" style="background-color: #ff6600; color: white; padding: 10px 15px; border: none; border-radius: 4px; cursor: pointer;">
+     Add to Cart
+ </button>
+</div>
+
+<!-- Product 9: Formal Shoes -->
+<div style="background-color: white; border: 1px solid #ddd; border-radius: 8px; padding: 20px; width: 220px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); text-align: center;">
+ <img src="formal-shoes.webp" alt="Formal Shoes" style="width: 100%; height: 250px; object-fit: cover; border-radius: 15px;">
+ <h2 style="font-size: 18px; color: #003366; margin: 10px 0;">Formal Shoes</h2>
+ <p style="color: #777; font-size: 14px;">UGX 450,000</p>
+ <button onclick="addToCart('Formal Shoes', 450000, 'formal-shoes.webp')" style="background-color: #ff6600; color: white; padding: 10px 15px; border: none; border-radius: 4px; cursor: pointer;">
+     Add to Cart
+ </button>
+</div>
+
+<!-- Product 10: Vintage Leather Jacket -->
+<div style="background-color: white; border: 1px solid #ddd; border-radius: 8px; padding: 20px; width: 220px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); text-align: center;">
+ <img src="Vintage Leather Jacket.webp" alt="Vintage Leather Jacket" style="width: 100%; height: 250px; object-fit: cover; border-radius: 15px;">
+ <h2 style="font-size: 18px; color: #003366; margin: 10px 0;">Vintage Leather Jacket</h2>
+ <p style="color: #777; font-size: 14px;">UGX 350,000</p>
+ <button onclick="addToCart('Vintage Leather Jacket', 350000, 'Vintage Leather Jacket.webp')" style="background-color: #ff6600; color: white; padding: 10px 15px; border: none; border-radius: 4px; cursor: pointer;">
+     Add to Cart
+ </button>
+</div>
+
+
+ </div>
+</div>
+
+<script>
+ function addToCart(name, price, image) {
+     // Retrieve existing cart or initialize an empty array
+     const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+     // Add the new item to the cart
+     cart.push({ name, price, image });
+
+     // Save the updated cart to localStorage
+     localStorage.setItem('cart', JSON.stringify(cart));
+
+     // Redirect to cart.html
+     window.location.href = 'cart.html';
+ }
+</script>
+
+
+
+       <!-- footer -->
+<footer style="background: linear-gradient(to bottom, #1E3A8A, #0284C7, #03A9F4, #1E3A8A); color: #ffffff; padding: 30px 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); width: 100%; box-sizing: border-box;">
+    <!-- Left Section: Company Info with Icons -->
+    <div style="flex: 1; min-width: 250px; padding: 10px; box-sizing: border-box;">
+        <p style="margin: 8px 0; font-size: 0.8rem; display: flex; align-items: center;">
+            <i class="fas fa-store" style="margin-right: 8px; color: #000000;"></i> 
+            Entity City on Fire Fashion Store
+        </p>
+        <p style="margin: 8px 0; font-size: 0.8rem; display: flex; align-items: center;">
+            <i class="fas fa-map-marker-alt" style="margin-right: 8px; color: #000000;"></i> 
+            Kampala, Uganda
+        </p>
+        <p style="margin: 8px 0; font-size: 0.8rem; display: flex; align-items: center;">
+            <i class="fas fa-phone-alt" style="margin-right: 8px; color: #000000;"></i> 
+            +256 744 843511
+        </p>
+    </div>
+
+    <!-- Center Section: Copyright, Terms, and Privacy -->
+    <div style="flex: 1; min-width: 180px; text-align: center; box-sizing: border-box;">
+        <p style="margin: 3px 0; font-size: 1rem;">&copy; 2025 Entity City on Fire Fashion Store</p>
+        <p style="margin: 3px 0; font-size: 0.8rem;">All Rights Reserved</p>
+        <p style="margin: 3px 0; font-size: 0.8rem;">
+            <a href="terms.html" style="color: #000000; text-decoration: none;">Terms</a> | 
+            <a href="privacy.html" style="color: #000000; text-decoration: none;">Privacy</a>
+        </p>
+    </div>
+
+    <!-- Right Section: Social Media Links with Header and Newsletter Signup -->
+    <div style="flex: 1; min-width: 200px; text-align: center; box-sizing: border-box;">
+        <p style="margin: 5px 0; font-size: 0.8rem; font-weight: bold;">Follow Our Social Media</p>
+        <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
+            <a href="https://facebook.com/yourpage" style="color: #000000; font-size: 1.5rem; margin: 5px;">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://instagram.com/yourpage" style="color: #000000; font-size: 1.5rem; margin: 5px;">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://twitter.com/yourpage" style="color: #000000; font-size: 1.5rem; margin: 5px;">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://linkedin.com/company/yourpage" style="color: #000000; font-size: 1.5rem; margin: 5px;">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://youtube.com/yourpage" style="color: #000000; font-size: 1.5rem; margin: 5px;">
+                <i class="fab fa-youtube"></i>
+            </a>
+            <a href="https://wa.me/+256744843511" style="color: #000000; font-size: 1.5rem; margin: 5px;">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+    </div>
+</footer>
+
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<!-- Add Media Queries to Adjust Font Size and Icon Sizes for Mobile Devices -->
+<style>
+    @media (max-width: 768px) {
+        footer p {
+            font-size: 0.7rem; /* Further reduced font size for mobile */
+        }
+        footer .fas {
+            font-size: 1.1rem; /* Reduced icon size */
+        }
+        footer .fab {
+            font-size: 1.1rem; /* Reduced social icon size */
+        }
+    }
+    @media (max-width: 480px) {
+        footer p {
+            font-size: 0.6rem; /* Smaller font size for very small screens */
+        }
+        footer .fas {
+            font-size: 1rem; /* Further reduced icon size */
+        }
+        footer .fab {
+            font-size: 1rem; /* Further reduced social icon size */
+        }
+    }
+</style>
+
+    
+</body>
+</html>
