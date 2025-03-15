@@ -5,13 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>login - Entity City on Fire</title>
 </head>
-<body style="margin: 0; font-family: Arial, sans-serif; padding-top: 250px;">
+<body style="margin: 0; font-family: Arial, sans-serif; padding-top: 150px;">
 
    <!-- Header -->
    <header style="position: fixed; top: 0; left: 0; right: 0; z-index: 1000; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; background: linear-gradient(to right, #02298c, #00ccff); padding: 10px; color: white; width: 100%; box-sizing: border-box;">
     <div class="left-section" style="flex: 1; display: flex; justify-content: flex-start;">
-        <img src="entity logo.png" alt="Company Logo" style="width: auto; height: auto; max-width: 100px;">
+        <img src="entity logo.png" alt="Company Logo" class="responsive-logo">
     </div>
+    
+    <style>
+        .responsive-logo {
+            width: auto;
+            height: auto;
+            max-width: 15%; /* Adjust size relative to the container */
+            max-height: 80px; /* Prevents it from becoming too large */
+        }
+    
+        /* For smaller screens */
+        @media (max-width: 768px) {
+            .responsive-logo {
+                max-width: 30%; /* Increase size on smaller screens */
+                max-height: 60px;
+            }
+        }
+    
+        /* For very small screens */
+        @media (max-width: 480px) {
+            .responsive-logo {
+                max-width: 40%; /* Larger size for better visibility */
+                max-height: 50px;
+            }
+        }
+    </style>
 
     <nav class="center-section" style="flex: 3; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
         <nav class="center-section" style="flex: 3; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
@@ -166,29 +191,48 @@ Payments Policy
     <h1 style="color: #ff6600; font-size: 22px; margin-bottom: 20px;">Login to Your Account</h1>
 
     <!-- Login Form -->
-    <form id="login-form">
-        <div style="margin-bottom: 15px;">
-            <input type="email" id="email" placeholder="Email" 
-                   style="width: 100%; padding: 12px; border: 1px solid #444; border-radius: 5px; 
-                          background: #222; color: #fff; font-size: 14px;">
-        </div>
-        <div style="margin-bottom: 15px; position: relative;">
-            <input type="password" id="password" placeholder="Password" 
-                   style="width: 100%; padding: 12px; border: 1px solid #444; border-radius: 5px; 
-                          background: #222; color: #fff; font-size: 14px;">
-            <i class="fas fa-eye" id="toggle-password" 
-               style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); 
-                      cursor: pointer; color: #ff6600;" 
-               onclick="toggleVisibility('password', 'toggle-password')"></i>
-        </div>
+<form id="login-form" style="max-width: 400px; margin: auto; padding: 20px; background-color: #333; border-radius: 8px;">
+    <div style="margin-bottom: 15px;">
+        <input type="email" id="email" placeholder="Email" 
+               style="width: 95%; padding: 12px; border: 1px solid #444; border-radius: 5px; 
+                      background: #222; color: #fff; font-size: 14px;">
+    </div>
+    <div style="margin-bottom: 15px; position: relative;">
+        <input type="password" id="password" placeholder="Password" 
+               style="width: 95%; padding: 12px; border: 1px solid #444; border-radius: 5px; 
+                      background: #222; color: #fff; font-size: 14px;">
+        <i class="fas fa-eye" id="toggle-password" 
+           style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); 
+                  cursor: pointer; color: #ff6600;" 
+           onclick="toggleVisibility('password', 'toggle-password')"></i>
+    </div>
 
-        <button type="submit" 
-                style="width: 100%; background: linear-gradient(to bottom, #ff6600, #cc5200); color: #fff; 
-                       padding: 12px; border: none; border-radius: 5px; cursor: pointer; 
-                       font-size: 16px; font-weight: bold; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.5);">
-            Login
-        </button>
-    </form>
+    <button type="submit" 
+            style="width: 100%; background: linear-gradient(to bottom, #ff6600, #cc5200); color: #fff; 
+                   padding: 12px; border: none; border-radius: 5px; cursor: pointer; 
+                   font-size: 16px; font-weight: bold; box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.5);">
+        Login
+    </button>
+</form>
+
+<!-- JavaScript for Password Visibility -->
+<script>
+function toggleVisibility(passwordField, iconId) {
+    let input = document.getElementById(passwordField);
+    let icon = document.getElementById(iconId);
+
+    if (input.type === "password") {
+        input.type = "text";
+        icon.classList.remove("fa-eye");
+        icon.classList.add("fa-eye-slash");
+    } else {
+        input.type = "password";
+        icon.classList.remove("fa-eye-slash");
+        icon.classList.add("fa-eye");
+    }
+}
+</script>
+s
 
     <!-- Divider -->
     <div style="margin: 15px 0; color: #888; font-size: 14px;">or</div>

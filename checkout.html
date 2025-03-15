@@ -5,13 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Entity City checkout</title>
 </head>
-<body style="margin: 0; font-family: Arial, sans-serif; padding-top: 250px;">
+<body style="margin: 0; font-family: Arial, sans-serif; padding-top: 80px;">
 
      <!-- Header -->
     <header style="position: fixed; top: 0; left: 0; right: 0; z-index: 1000; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; background: linear-gradient(to right, #02298c, #00ccff); padding: 10px; color: white; width: 100%; box-sizing: border-box;">
         <div class="left-section" style="flex: 1; display: flex; justify-content: flex-start;">
-            <img src="entity logo.png" alt="Company Logo" style="width: auto; height: auto; max-width: 100px;">
+            <img src="entity logo.png" alt="Company Logo" class="responsive-logo">
         </div>
+        
+        <style>
+            .responsive-logo {
+                width: auto;
+                height: auto;
+                max-width: 15%; /* Adjust size relative to the container */
+                max-height: 80px; /* Prevents it from becoming too large */
+            }
+        
+            /* For smaller screens */
+            @media (max-width: 768px) {
+                .responsive-logo {
+                    max-width: 30%; /* Increase size on smaller screens */
+                    max-height: 60px;
+                }
+            }
+        
+            /* For very small screens */
+            @media (max-width: 480px) {
+                .responsive-logo {
+                    max-width: 40%; /* Larger size for better visibility */
+                    max-height: 50px;
+                }
+            }
+        </style>
     
         <nav class="center-section" style="flex: 3; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
             <nav class="center-section" style="flex: 3; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
@@ -160,7 +185,7 @@
     
 
       <!-- main content -->
-<main style="margin: 0 auto; padding: 40px 20px; max-width: 1100px; background-color: #fff; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); text-align: center;">
+<main style="margin: 0 auto; padding: 40px 20px; max-width: 1100px; background-color: #fff; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); text-align: center; margin-top: 50px;">
     <div style="max-width: 600px; margin: 50px auto; padding: 20px; background-color: #222; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); color: #fff;">
         <h1 style="text-align: center; color: #ff6600;">Checkout</h1>
 
@@ -193,24 +218,14 @@
             const checkoutItemDiv = document.getElementById('checkout-item');
             const totalAmountDiv = document.getElementById('total-amount');
 
-            // Display product details with zoomable image
+            // Display product details with non-zoomable image
             checkoutItemDiv.innerHTML = `
-                <img id="checkout-image" src="${image}" alt="${name}" style="width: 400px; height: 400px; object-fit: cover; margin-bottom: 20px; border-radius: 10px; transition: transform 0.25s ease;">
+                <img id="checkout-image" src="${image}" alt="${name}" style="width: 400px; height: 400px; object-fit: cover; margin-bottom: 20px; border-radius: 10px;">
                 <p style="font-size: 20px; color: #ff6600; font-weight: bold;">${name}</p>
                 <p style="color: #fff;">Price: UGX ${price}</p>
             `;
 
             totalAmountDiv.textContent = `Total: UGX ${price}`;
-
-            // Add double-click event for zooming in and out
-            const imageElement = document.getElementById('checkout-image');
-            imageElement.addEventListener('dblclick', function() {
-                if (imageElement.style.transform === "scale(2)") {
-                    imageElement.style.transform = "scale(1)";
-                } else {
-                    imageElement.style.transform = "scale(2)";
-                }
-            });
 
             // Link the product data to the payment page
             const proceedToPaymentLink = document.getElementById('proceed-to-payment');
@@ -226,8 +241,6 @@
         document.addEventListener('DOMContentLoaded', loadCheckoutItem);
     </script>
 </main>
-
-
 
 
    
