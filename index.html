@@ -10,8 +10,34 @@
     <!-- Header -->
     <header style="position: fixed; top: 0; left: 0; right: 0; z-index: 1000; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; background: linear-gradient(to right, #02298c, #00ccff); padding: 10px; color: white; width: 100%; box-sizing: border-box;">
         <div class="left-section" style="flex: 1; display: flex; justify-content: flex-start;">
-            <img src="entity logo.png" alt="Company Logo" style="width: auto; height: auto; max-width: 100px;">
+            <img src="entity logo.png" alt="Company Logo" class="responsive-logo">
         </div>
+        
+        <style>
+            .responsive-logo {
+                width: auto;
+                height: auto;
+                max-width: 15%; /* Adjust size relative to the container */
+                max-height: 80px; /* Prevents it from becoming too large */
+            }
+        
+            /* For smaller screens */
+            @media (max-width: 768px) {
+                .responsive-logo {
+                    max-width: 30%; /* Increase size on smaller screens */
+                    max-height: 60px;
+                }
+            }
+        
+            /* For very small screens */
+            @media (max-width: 480px) {
+                .responsive-logo {
+                    max-width: 40%; /* Larger size for better visibility */
+                    max-height: 50px;
+                }
+            }
+        </style>
+        
     
         <nav class="center-section" style="flex: 3; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
             <nav class="center-section" style="flex: 3; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
